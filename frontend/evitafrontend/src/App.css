@@ -1,0 +1,484 @@
+*{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.Header {
+  text-align: center;
+  display: flex;
+  margin: auto;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  opacity: 98%;
+
+}
+.Header.Fixed{
+
+  position: sticky;
+  top: 0px;
+  margin-top: 0;
+  z-index: 9999;
+}
+
+.Header h1{
+  display: none;
+}
+
+.Header.Fixed h1{
+  display: inline;
+}
+
+
+.Header  h2 {
+  text-decoration: underline;
+  color: rgb(36, 36, 36);
+  width: 100%;
+  padding: 10px;
+  transition: ease-out 0.2s;
+}
+
+
+
+
+.Header  h2:hover {
+  color: rgb(134, 134, 134);
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+
+.NavBar{
+  display: flex;
+  margin: auto;
+  text-align: center;
+}
+
+
+.Footer{
+  border-top: 2px solid black;
+  bottom: 0px;
+  width: 100%;
+  height: 200px;
+  max-height: 200px;
+  text-align: center;
+  margin: auto;
+  padding-top: 20px;
+  background-color: rgb(202, 202, 202);
+  font-weight: 800;
+}
+
+.EvitaText{
+  text-decoration: underline;
+  width: 50%;
+  height: 100%;
+}
+
+.Info{
+  text-align: left;
+  font-size: x-large;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 800px;
+}
+
+.Info  h1 {
+  text-align: center;
+  font-size: 50px;
+  text-decoration: underline;
+}
+
+.Info img {
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 10%;
+}
+
+.DivLine{
+  height: 2px;
+  background-color: black;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Releases{
+  text-align: center;
+}
+
+.Spotify{
+  width: 300px;
+  height: 400px;
+  border-radius: 0%;
+  margin-top: 60px;
+  
+}
+
+.Esittelyt{
+  margin-top: 20px;
+  font-size: large;
+  font-family:'Times New Roman', Times, serif;
+  color: black;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.Media{
+  width: 100%;
+  height: 800px;
+}
+
+.Shop{
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 800px;
+  text-align: center;
+
+  
+}
+
+.Youtube{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.Releases h4{
+  margin: 2px;
+}
+
+.Releases p{
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.Tuote{
+  margin: auto;
+  margin-top: 40px;
+  width: 500px;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.Tuotekuva{
+  width: 300px;
+  height: 300px;
+  margin: auto;
+
+}
+
+.TuoteInput{
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.Keikat{
+  text-align: center;
+  min-height: 800px;
+  width: 100%;
+  
+}
+
+.Keikat h1{
+  text-decoration: underline;
+}
+
+.YksiKeikka{
+  text-align: left;
+  width: 50%;
+  margin-left: 35%;
+}
+
+.YksiKeikka > *{
+  display: inline-block;
+  padding: 20px;
+}
+
+.YksiKeikka button{
+  border: 1px solid black;
+  background-color: rgb(231, 231, 231);
+  border-radius: 2px;
+  height: 60px;
+  width: 120px;
+  padding: 5px;
+  font-weight: 800;
+  margin: auto;
+  font-size: larger;
+}
+
+.YksiKeikka button:hover{
+  background-color: rgb(236,236,236);
+  cursor: pointer;
+}
+
+.Image{
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  
+}
+
+.ToukoKuva{
+  width: 2000px;
+  margin-top: -150px;
+  margin-left: -250px;
+  z-index: -1;
+
+}
+
+.EVITA_TEXT{
+  width: 10%;
+  z-index: 1;
+  position: absolute;
+  top: 200px;
+  left: 45%;
+  color: white;
+  text-decoration: underline;
+  font-size: 60px;
+  opacity: 90%;
+
+}
+
+.Releases p {
+  font-weight: 800;
+}
+
+.shoppingCart{
+  position: absolute;
+  right: 40px;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: white;
+  transition: ease-out 0.2s;
+}
+
+.shoppingCart:hover{
+  cursor:pointer;
+  background-color: rgb(242, 242, 242);
+  border-radius: 100%;
+  transition: background-color ease-in-out 0.1s;
+}
+
+.cartImage{
+  width: 90%;
+  height: 90%;
+}
+
+.shopAlert{
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  z-index: 9998;
+  position: absolute;
+  top: 0;
+  right: 2px;
+}
+
+.shopInnerLine{
+  display: inline-block;
+  border-radius: 100%;
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+
+}
+
+.shopOuterLine{
+  display: inline-block;
+  border-radius: 100%;
+  background-color: red;
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  margin: 0;
+}
+
+.TuoteAdd{
+  background-color: white;
+  border: none;
+  position: relative;
+  margin-left: 2%;
+  width: 42%;
+  height: 40px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  font-size: medium;
+  transition: ease 0.3s;
+}
+
+
+
+
+.TuoteAdd:hover{
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+
+.TuoteAdd:active{
+  background-color: rgb(230,230,230);
+}
+
+.dropdown{
+  position: relative;
+  width: 40%;
+  margin-top: 10px;
+  margin-left: 30%;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: ease-out 0.2s;
+}
+
+.dropdown:hover{
+  cursor: pointer;
+  background-color: rgb(232, 232, 232);
+  transition: ease-in-out 0.2s;
+
+
+
+}
+
+.dropdownContent{
+  position: absolute;
+  margin-top: 7px;
+  left:0px;
+  z-index: 20;
+  background-color: white;
+  width: 210px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: 2px solid black;
+  transition: ease-in 0.5s;
+
+}
+
+.dropdownContent div:hover{
+  background-color: rgb(228, 228, 228);
+  transition: ease-in-out 0.3s;
+}
+
+.dropdownContent div{
+  transition: ease-in-out 0.3s;  
+  padding: 5px;
+}
+
+.Round{
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  transition: ease 0.3s;
+}
+
+.Round:hover{
+  background-color: rgb(244, 244, 244);
+  cursor:pointer;
+  transition: ease 0.3s;
+}
+
+.Round:focus{
+  outline:none !important;
+  box-shadow: none; /* remove box shadow */
+}
+
+.Round.Second{
+  left:unset;
+  right: 5px;
+
+}
+
+.MaaraButton{
+  width: 40%;
+  margin-left: 30%;
+  height: 40px;
+  position: relative;
+  border-bottom: 2px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.MaaraButton:focus{
+  outline:none !important;
+  box-shadow: none; 
+}
+
+
+
+.HorizontalLine, .VerticalLine{
+  height: 2px;
+  background-color: black;
+  width: 60%;
+  margin-top: 45%;
+  margin-left: 20%;
+}
+
+.HorizontalLine:focus, .VerticalLine:focus{
+  outline:none !important;
+  box-shadow: none; 
+}
+
+.VerticalLine{
+  transform:rotate(90deg);
+  position: absolute;
+  top:0;
+  
+}
+
+.maara{
+  position: relative;
+  bottom: -2px;
+  font-size: x-large;
+  font-weight: 500 ;
+  margin: auto;
+  display: inline-block;
+}
+
+.maara:focus{
+  outline:none !important;
+  box-shadow: none; 
+}
+
+.OstoskoriWrapper{
+  text-align: center;
+  margin: 50px;
+  min-height: 500px;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.Ostoskori_Ostos{
+  border-bottom: 2px solid black;
+  padding: 10px;
+}
+
+.OstoskoriKuva{
+  height: 50px;
+  width: 50px;
+}
