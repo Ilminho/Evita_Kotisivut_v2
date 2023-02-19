@@ -16,6 +16,7 @@ const Shop = ()=>{
             {
                 tuotteet.map(tuote=><Tuote key={tuote.nimi} tuote={tuote}/>)
             }
+            
         </div>
     )
 }

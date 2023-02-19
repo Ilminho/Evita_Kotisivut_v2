@@ -36,7 +36,7 @@ function App() {
               <Route path='/Keikat'element={<Keikat/>}/>
               <Route path='/Julkaisut' element={<Releases/>}/>
               <Route path='/Shop' element={<Shop/>}/>
-              <Route path='/' element={<div>Home</div>}/>
+              <Route path='/' element={<Info/>}/>
               <Route path="*" element={<div>No Element</div>}/>
           </Routes>
           <Footer/>
