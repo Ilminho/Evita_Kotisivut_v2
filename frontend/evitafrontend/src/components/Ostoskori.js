@@ -4,6 +4,7 @@ import "../App.css"
 
 
 
+
 const Ostoskori =(props)=>{
     const dispatch = useDispatch()
 
@@ -35,15 +36,19 @@ const Ostoskori =(props)=>{
                 props.ostoskori.map((tuote,index)=>
                 <div key={index+"ostoskori"} className="Ostoskori_Ostos">
                     <img src={tuote.kuva} className="OstoskoriKuva"></img>
-                    <b>Nimi:</b> {tuote.nimi}
-                    <b> Määrä:</b>
-                    <button className="VahButton" onClick={()=>vahennaYksiTuote(index,tuote.maara)}>-</button>
-                    {tuote.maara} 
-                    <button className="LisaaButton" onClick={()=>lisaaYksiTuote(index)}>+</button>
+                    <span className="Ostoskori_Tuotetiedot">
+                        <b>{tuote.nimi}</b> 
+                        <span className="MaaraSpan">             
+                            <button className="VahButton" onClick={()=>vahennaYksiTuote(index,tuote.maara)}>-</button>
+                            {tuote.maara} 
+                            <button className="LisaaButton" onClick={()=>lisaaYksiTuote(index)}>+</button>
+                        </span>
+                    </span>
 
-                    {tuote.tyyppi} 
-                    <b>Hinta per kappale:</b> {tuote.hinta}e 
-                    <b>Hinta yhteensä:</b> {tuote.hinta*tuote.maara}
+                    <span className="ostoskori_Hinta">
+                        <b>Kappalehinta: {tuote.hinta} {tuote.hinta>1?"euroa":"euro"}</b>
+                    </span>
+
                 </div>
                 )
             }
@@ -53,6 +58,7 @@ const Ostoskori =(props)=>{
                 <h3>{props.ostoskori.reduce((p,c)=>p+c.maara*c.hinta,0)}e</h3>
             </div>
             <button className="tyhjennaButton" onClick={tyhjennaOstoskori}>Tyhjennä ostoskori</button>
+            
 
             
 
