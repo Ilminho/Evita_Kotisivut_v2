@@ -500,10 +500,15 @@
   height: 50px;
   font-size: 20px;
   font-weight: 700;
+  margin: 5px;
 }
 
 .tyhjennaButton:hover{
   background-color: rgb(230, 230, 230);
+}
+
+.tyhjennaButton:active{
+  background-color: rgb(220, 220, 220);
 }
 
 .VahButton, .LisaaButton{
@@ -559,6 +564,17 @@
   position: absolute;
   right: 5px;
   padding: 20px;
+}
+
+.Vahvista{
+  position: absolute;
+  top: 200px;
+  width: 50%;
+  left: 25%;
+  z-index: 9999;
+  background-color: white;
+  height: 500px;
+  border: 2px solid black;
 }
 
 

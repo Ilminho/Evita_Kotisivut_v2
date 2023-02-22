@@ -1,12 +1,21 @@
 import { connect, useDispatch } from "react-redux"
 import { addTuote, removeAll, plusOne, minusOne, poistaYksi } from "../reducers/ostoskoriReducer";
 import "../App.css"
+import DivLine from "./DivLine";
+import { useState } from "react";
+import Vahvista from "./Vahvista";
 
 
 
 
 const Ostoskori =(props)=>{
     const dispatch = useDispatch()
+
+    const [vahvista, setVahvista] = useState(false)
+
+    const changeVahvista = ()=>{
+        setVahvista(!vahvista)
+    }
 
 
     const tyhjennaOstoskori=()=>{
@@ -57,7 +66,16 @@ const Ostoskori =(props)=>{
                 <h2>Ostoskori yhteensä:</h2>
                 <h3>{props.ostoskori.reduce((p,c)=>p+c.maara*c.hinta,0)}e</h3>
             </div>
-            <button className="tyhjennaButton" onClick={tyhjennaOstoskori}>Tyhjennä ostoskori</button>
+
+            <DivLine/>
+            <button className="tyhjennaButton" onClick={tyhjennaOstoskori}>Tyhjennä ostoskori</button> 
+
+            <DivLine/>
+
+            <button className="tyhjennaButton" onClick={changeVahvista}>Vahvista ja maksa</button>
+
+
+            {vahvista?<Vahvista sulje={changeVahvista}/>:"nada"}
             
 
             
