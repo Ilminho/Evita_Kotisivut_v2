@@ -26,7 +26,7 @@ const SelectInput=(props)=>{
                 {value}
             {show?
                 <div className="dropdownContent">
-                    {tuoteTyypit.map(value=><div key={value} onClick={()=>{setValue(value);props.changeTyyppi(props.tuotteet.filter(e=>e.tyyppi===value)[0]); showSelection()}} className="" > 
+                    {tuoteTyypit.map(value=><div key={value} onClick={()=>{setValue(value);props.changeTyyppi(props.tuotteet.filter(e=>e.tyyppi===value)); showSelection()}} className="" > 
                 {value}</div>)}
                     </div>
                 :<></>

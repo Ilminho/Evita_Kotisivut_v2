@@ -1,0 +1,35 @@
+POST http://localhost:3001/keikka
+Content-Type: application/json
+
+{
+    "aika":"12.07.1995",
+    "kaupunki":"Helsinki",
+    "keikkapaikka":"Kerubi",
+    "maps":"https://www.google.com/maps/place/Tikkamäki,+80200+Joensuu/@62.5926007,29.780258,15z/data=!3m1!4b1!4m6!3m5!1s0x469b8671a283c9f3:0xb569b16874c92312!8m2!3d62.5926011!4d29.780258!16s%2Fg%2F1vc_p084",
+    "liput":"https://www.ticketmaster.fi/artist/elastinen-lippuja/912034"
+}
+
+###
+POST http://localhost:3001/keikka
+Content-Type: application/json
+
+{
+    "aika":"12.07.1995",
+    "kaupunki":"Helsinki",
+    "keikkapaikka":"Kerubi",
+    "maps":"https://www.google.com/maps/place/Tikkamäki,+80200+Joensuu/@62.5926007,29.780258,15z/data=!3m1!4b1!4m6!3m5!1s0x469b8671a283c9f3:0xb569b16874c92312!8m2!3d62.5926011!4d29.780258!16s%2Fg%2F1vc_p084",
+    "liput":"https://www.ticketmaster.fi/artist/elastinen-lippuja/912034"
+}
+
+###
+
+POST http://localhost:3001/keikka
+
+###
+
+POST http://localhost:3001/sessio/xxx
+Content-Type: application/json
+
+{
+    "ostoskori":"jtn"
+}
