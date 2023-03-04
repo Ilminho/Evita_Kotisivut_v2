@@ -2,8 +2,10 @@ const requestLogger = (req,res,next)=>{
 
     console.log("\n");
     console.log("-------REQUESTLOGGER----------");
+    console.log("TIME");
+    console.log(new Date(Date.now()));
     console.log("Method:" +req.method);
-    console.log("Body:" +req.body);
+    console.log("Body:" );
     console.log(req.body);
     console.log("Path:" +req.path);
     console.log("——————————————————————————————");

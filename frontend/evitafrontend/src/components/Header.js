@@ -1,13 +1,19 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import cart from "../images/cart-icon-28356.png"
-import { connect } from "react-redux"
+import { connect, useDispatch } from "react-redux"
 import { addTuote } from "../reducers/ostoskoriReducer"
+import auth from "../services/auth"
+import Cookies from "js-cookie"
+import { initializeOstoskori } from "../reducers/ostoskoriReducer"
+
 
 
 const Header = (props)=>{
 
     const navigate= useNavigate()
+
+    const dispatch = useDispatch()
 
     const [navname, setNavname] = useState("Header")
 
@@ -48,14 +54,20 @@ const Header = (props)=>{
 
 const mapStateProps = (state)=>{
     return{
-      ostoskori:state.ostoskori
+        ostoskori:state.ostoskori
     }
 }
 
 const dispatchProps = {
-  addTuote
+    addTuote,
+    initializeOstoskori
 }
 
 const ConnectHeader = connect(mapStateProps, dispatchProps)(Header)
 
 export default ConnectHeader
+/*
+<button onClick={()=>auth.setAuth()}>TESTI</button>
+<button onClick={()=>console.log(Cookies.get('auth'))}> TESTI KAKSI</button>
+<button onClick={()=>dispatch(initializeOstoskori())}> TESTI KOLME</button>
+*/

@@ -23,7 +23,7 @@ sessioRouter.put("/sessio/:id", async (req,res)=>{
     false
 
     if(!ostoskori){
-        res.send("Cannot update ostoskori")
+        res.status(400).send("Cannot update ostoskori")
         return
     }
 

@@ -11,6 +11,8 @@ const Shop = ()=>{
         window.scrollY>800?window.scrollTo(0,800):console.log("nada");
       },[])
 
+    
+
     return(
         <div className="Shop">
             {

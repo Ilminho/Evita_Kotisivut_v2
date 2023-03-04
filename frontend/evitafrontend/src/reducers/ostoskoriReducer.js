@@ -1,11 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import auth from "../services/auth";
 
 
-const initialState = [{nimi:"Evita EP", tyyppi:"CD", hinta:15, kuva:"../images/Evita sinkun kansi 1.jpg", maara:1}]
+const initialState = []
 const ostoskoriSlice = createSlice({
     name:"ostoskori",
     initialState,
     reducers:{
+        setOstokset(state,action){
+            return action.payload
+        },
         addOstos(state,action){
             state.push(action.payload)
         },
@@ -38,16 +42,29 @@ const ostoskoriSlice = createSlice({
     }
 })
 
+export const initializeOstoskori = ()=>{
+
+    console.log("OstoskoriReducer");
+
+    return async dispatch =>{
+            console.log("ostoskori");
+            const initOstoskori = await auth.getOstoskori()
+            dispatch(setOstokset(initOstoskori))
+    }
+}
+
 export const addTuote = (ostos)=>{
     return async dispatch=>{
         console.log("jtn5");
-        dispatch(addOstos(ostos))    
+        dispatch(addOstos(ostos))
+
     }
 }
 
 export const removeAll = ()=>{
     return async dispatch=>{
         dispatch(deleteAll())
+        auth.sendOstoskori([])
     }
 }
 
@@ -70,6 +87,6 @@ export const poistaYksi = (id)=>{
 
 
 
-export const {addOstos, deleteAll, addYksi, minusYksi, deleteOne} = ostoskoriSlice.actions
+export const {addOstos, deleteAll, addYksi, minusYksi, deleteOne, setOstokset} = ostoskoriSlice.actions
 
 export default ostoskoriSlice.reducer

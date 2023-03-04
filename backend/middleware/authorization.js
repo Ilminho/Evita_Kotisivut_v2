@@ -25,9 +25,16 @@ const checkAndSetSessionId = async(req,res,next) =>{
     let ok = await checkIfAuthOk(req.cookies.auth) 
     if(ok){
         res.cookie('auth',req.cookies.auth)
+
+        console.log("\n");
+        console.log("—————————————————————");
+        console.log("Auth ok");
+        console.log("—————————————————————");
+        console.log("\n");
         next()
         return;
     }
+
     newAuth = await createNewAuth()
 
     res.cookie('auth',newAuth)

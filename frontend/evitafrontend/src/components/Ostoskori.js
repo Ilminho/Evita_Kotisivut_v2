@@ -75,7 +75,7 @@ const Ostoskori =(props)=>{
             <button className="tyhjennaButton" onClick={changeVahvista}>Vahvista ja maksa</button>
 
 
-            {vahvista?<Vahvista sulje={changeVahvista}/>:"nada"}
+            {vahvista?<Vahvista sulje={changeVahvista}/>:""}
             
 
             
