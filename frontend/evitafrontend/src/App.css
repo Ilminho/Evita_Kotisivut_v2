@@ -199,12 +199,14 @@
 .YksiKeikka{
   text-align: left;
   width: 50%;
-  margin-left: 35%;
+  margin-left: 30%;
 }
 
 .YksiKeikka > *{
   display: inline-block;
-  padding: 20px;
+  width: 33%;
+  overflow: hidden;
+  padding: 5x;
 }
 
 .YksiKeikka button{
@@ -505,6 +507,7 @@
 
 .tyhjennaButton:hover{
   background-color: rgb(230, 230, 230);
+  cursor: pointer;
 }
 
 .tyhjennaButton:active{
@@ -557,6 +560,13 @@
   position: absolute;
   bottom: 20px;
   left: 20%;
+}
+
+.Ostoskori_Tuotetiedot > div {
+  display: inline-block;
+  width: 50%;
+  padding: 0;
+  text-align: center;
 }
 
 .ostoskori_Hinta{

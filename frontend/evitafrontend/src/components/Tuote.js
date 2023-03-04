@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
 import SelectInput from "./SelectInput"
-import tuoteKuva from "../images/Evita sinkun kansi 1.jpg"
 import MaaraButton from "./MaaraButton"
 import { addTuote } from "../reducers/ostoskoriReducer"
 import { useDispatch } from 'react-redux'
 import { connect } from "react-redux"
 
 const Tuote = (props)=>{
+
+    
 
     const tuote = props.tuote
     const dispatch = useDispatch()
@@ -15,6 +16,8 @@ const Tuote = (props)=>{
 
     const [image, setImage] = useState("No image")
     const [selected, setSelected] = useState(tuote.tuotteet[0])
+
+    console.log(props.tuote);
 
     const minusOne =()=>{
         maara>0?setMaara(maara-1):console.log("No can do");
@@ -28,11 +31,11 @@ const Tuote = (props)=>{
         if(maara<1)
             return;
         setMaara(0)
-        dispatch(addTuote({nimi:tuote.nimi,tyyppi:selected.tyyppi, hinta:selected.hinta,kuva:tuote.kuva, maara:maara}))
+        dispatch(addTuote({nimi:tuote.nimi,tyyppi:selected.tyyppi, hinta:selected.hinta,kuva:tuote.kuva, maara:maara, tyypit:tuote.tyypit}))
     }
 
     const changeSelected = (tyyppi)=>{
-        setSelected(tyyppi)
+        setSelected(tyyppi[0])
     }
 
 

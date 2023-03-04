@@ -15,11 +15,19 @@ const Keikat = ()=>{
         <div className="Keikat">
             <h1>Keikat</h1>
             {keikat.map(keikka=><div key={keikka.pvm+keikka.paikka} className="YksiKeikka">
-                <h2>{keikka.paikka}</h2>
-                <h2>{keikka.pvm}</h2>
-                <form>
-                    <button formAction={keikka.liput} formTarget="_blank"> Osta liput</button>
-                </form>
+                <div>
+                    <h2>{keikka.paikka}</h2>
+                </div>
+                <div>
+                    <h2>{keikka.pvm}</h2>
+                </div>
+                <div>
+                    <form>
+                        <button formAction={keikka.liput} formTarget="_blank"> Osta liput</button>
+                    </form>
+                </div>
+                
+                
             </div>)}
         </div>
     )

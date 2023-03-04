@@ -17,6 +17,8 @@ const Ostoskori =(props)=>{
         setVahvista(!vahvista)
     }
 
+    console.log(props.ostoskori);
+
 
     const tyhjennaOstoskori=()=>{
         window.confirm("Haluatko tyhjentää ostoskorin?")?dispatch(removeAll()):console.log("Ei");
@@ -46,12 +48,18 @@ const Ostoskori =(props)=>{
                 <div key={index+"ostoskori"} className="Ostoskori_Ostos">
                     <img src={tuote.kuva} className="OstoskoriKuva"></img>
                     <span className="Ostoskori_Tuotetiedot">
-                        <b>{tuote.nimi}</b> 
-                        <span className="MaaraSpan">             
-                            <button className="VahButton" onClick={()=>vahennaYksiTuote(index,tuote.maara)}>-</button>
-                            {tuote.maara} 
-                            <button className="LisaaButton" onClick={()=>lisaaYksiTuote(index)}>+</button>
-                        </span>
+                        <div>
+                        <b>{tuote.nimi},  </b>
+                        <b>{tuote.tyypit}: {tuote.tyyppi}</b>
+                        </div>
+                         
+                        <div>
+                            <span className="MaaraSpan">             
+                                <button className="VahButton" onClick={()=>vahennaYksiTuote(index,tuote.maara)}>-</button>
+                                {tuote.maara} 
+                                <button className="LisaaButton" onClick={()=>lisaaYksiTuote(index)}>+</button>
+                            </span>
+                        </div>
                     </span>
 
                     <span className="ostoskori_Hinta">
