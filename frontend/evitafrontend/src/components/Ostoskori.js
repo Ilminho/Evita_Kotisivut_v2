@@ -38,13 +38,97 @@ const Ostoskori =(props)=>{
         maara<1?poistaTuote(id):dispatch(minusOne(id))  
     }
 
+    const Sisalto = ()=>{
+        return(
+            <div>
+                {props.ostoskori?.length<1&&Array.isArray(props.ostoskori)?"Ostoskorisi on tyhjä":
+                props.ostoskori.map((tuote,index)=>
+                <div key={index+"ostoskori"} className="Ostoskori_Ostos">
+                    <img src={tuote.kuva} className="OstoskoriKuva"></img>
+                    <span className="Ostoskori_Tuotetiedot">
+                        <div>
+                        <b>{tuote.nimi},  </b>
+                        <b>{tuote.tyypit}: {tuote.tyyppi}</b>
+                        </div>
+                         
+                        <div>
+                            <span className="MaaraSpan">             
+                                <button className="VahButton" onClick={()=>vahennaYksiTuote(index,tuote.maara)}>-</button>
+                                {tuote.maara} 
+                                <button className="LisaaButton" onClick={()=>lisaaYksiTuote(index)}>+</button>
+                            </span>
+                        </div>
+                    </span>
+        
+                    <span className="ostoskori_Hinta">
+                        <b>Kappalehinta: {tuote.hinta} {tuote.hinta>1?"euroa":"euro"}</b>
+                    </span>
+        
+                </div>
+                )
+                }
+
+            </div>
+        )
+    }
+
+    console.log(props.ostoskori);
+
 
     return(
+        Array.isArray(props.ostoskori)?
+
         <div className="OstoskoriWrapper">
 
             <h1>OSTOSKORI</h1>
+            
+            <Sisalto/>
+            
 
-            {props.ostoskori?.length<1?"Ostoskorisi on tyhjä":
+
+            <div className="KaikkiOstokset">
+                <h2>Ostoskori yhteensä:</h2>
+                <h3>{props.ostoskori.reduce((p,c)=>p+c.maara*c.hinta,0)}e</h3>
+            </div>
+
+            <DivLine/>
+            <button className="tyhjennaButton" onClick={tyhjennaOstoskori}>Tyhjennä ostoskori</button> 
+
+            <DivLine/>
+
+            <button className="tyhjennaButton" onClick={changeVahvista}>Vahvista ja maksa</button>
+
+
+            {vahvista?<Vahvista sulje={changeVahvista}/>:""}
+            
+
+            
+
+
+        </div>
+        :
+        <div>Vikailmoitus</div>
+
+    )
+}
+
+const mapStateProps = (state)=>{
+    return{
+      ostoskori:state.ostoskori
+    }
+}
+
+const dispatchProps = {
+  addTuote,
+  removeAll
+}
+
+const ConnectOstoskori = connect(mapStateProps, dispatchProps)(Ostoskori)
+
+export default ConnectOstoskori
+
+/*
+            {props.ostoskori?.length<1&&Array.isArray(props.ostoskori)?"Ostoskorisi on tyhjä":
                 props.ostoskori.map((tuote,index)=>
                 <div key={index+"ostoskori"} className="Ostoskori_Ostos">
                     <img src={tuote.kuva} className="OstoskoriKuva"></img>
@@ -71,40 +155,4 @@ const Ostoskori =(props)=>{
                 )
             }
 
-            <div className="KaikkiOstokset">
-                <h2>Ostoskori yhteensä:</h2>
-                <h3>{props.ostoskori.reduce((p,c)=>p+c.maara*c.hinta,0)}e</h3>
-            </div>
-
-            <DivLine/>
-            <button className="tyhjennaButton" onClick={tyhjennaOstoskori}>Tyhjennä ostoskori</button> 
-
-            <DivLine/>
-
-            <button className="tyhjennaButton" onClick={changeVahvista}>Vahvista ja maksa</button>
-
-
-            {vahvista?<Vahvista sulje={changeVahvista}/>:""}
-            
-
-            
-
-
-        </div>
-    )
-}
-
-const mapStateProps = (state)=>{
-    return{
-      ostoskori:state.ostoskori
-    }
-}
-
-const dispatchProps = {
-  addTuote,
-  removeAll
-}
-
-const ConnectOstoskori = connect(mapStateProps, dispatchProps)(Ostoskori)
-
-export default ConnectOstoskori
+            */

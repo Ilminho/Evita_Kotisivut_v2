@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb://localhost:27017/shop",{
+const PASSWORD = "mooctest"
+
+const url = `mongodb+srv://Ilminho:${PASSWORD}@cluster0.nfgcz.mongodb.net/evitaDB?retryWrites=true&w=majority`
+
+mongoose.connect(url,{
     useNewUrlParser:true,useUnifiedTopology:true
 },(error)=>{
     if(error)console.log(error);

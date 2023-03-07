@@ -14,18 +14,22 @@ const createNewAuth =async ()=>{
 
 }
 
-const checkIfAuthOk = async (auth)=>{ //lisää autorisoinnin vanhentuminen
+const checkIfAuthOk = async (auth)=>{ //lisää autorisoinnin vanhentuminen 
+
     let ok = await SessioModel.findOne({auth:auth})
     ok?ok=true:ok=false
     return ok
 }
 
 const checkAndSetSessionId = async(req,res,next) =>{
-    let newAuth
-    let ok = await checkIfAuthOk(req.cookies.auth) 
-    if(ok){
-        res.cookie('auth',req.cookies.auth)
+    let auth = req.get('authorization')
 
+
+    let newAuth
+
+    let ok = await checkIfAuthOk(auth) 
+    if(ok){
+        res.cookie('auth',auth)
         console.log("\n");
         console.log("—————————————————————");
         console.log("Auth ok");
@@ -34,8 +38,6 @@ const checkAndSetSessionId = async(req,res,next) =>{
         next()
         return;
     }
-
-    
 
     try {
         
