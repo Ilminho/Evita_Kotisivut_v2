@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import DivLine from "./DivLine"
 import cheek from "../images/cheek.jpg"
 import lahtoMusa from "../images/Musiikkivideo.png"

@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import kuva from "../images/Evita_c_ Touko Hujanen.JPG"
 
 const Image =()=>{

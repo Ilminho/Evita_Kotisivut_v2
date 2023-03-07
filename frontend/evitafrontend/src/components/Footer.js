@@ -1,4 +1,4 @@
-
+/* eslint-disable */ 
 const Footer = ()=>{
     return(
         <div className="Footer">

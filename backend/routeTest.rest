@@ -27,9 +27,9 @@ POST http://localhost:3001/keikka
 
 ###
 
-PUT http://localhost:3001/sessio/37d7a820-0112-443b-bfbf-bbe636f706c3			
+PUT http://localhost:3001/sessio/01cf8c7b-2c32-43e4-a333-97ceea8434a8		
 Content-Type: application/json
 
 {
-    "ostoskori":[{"nimi":"Evita EP","tyyppi":"CD","hinta":15,"kuva":"../images/Evita sinkun kansi 1.jpg","maara":1}]
+    "ostoskori":[{"nimi":"Evita EP","tyyppi":"CD","hinta":15,"kuva":"../images/Evita sinkun kansi 1.jpg","maara":4}]
 }

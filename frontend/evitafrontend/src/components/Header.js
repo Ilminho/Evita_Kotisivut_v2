@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import cart from "../images/cart-icon-28356.png"

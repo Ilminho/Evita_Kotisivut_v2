@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import Tuote from "./Tuote"
 import { useEffect } from "react";
 import tuotteet from "../dummyData/tuotteet";

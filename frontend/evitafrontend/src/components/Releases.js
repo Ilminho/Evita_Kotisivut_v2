@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 
 import DivLine from './DivLine';
 import Spotify from "react-spotify-embed"
