@@ -35,7 +35,16 @@ const checkAndSetSessionId = async(req,res,next) =>{
         return;
     }
 
-    newAuth = await createNewAuth()
+    
+
+    try {
+        
+        newAuth = await createNewAuth()
+    } catch (error) {
+        res.status(404).send()
+        return
+    }
+
 
     res.cookie('auth',newAuth)
 

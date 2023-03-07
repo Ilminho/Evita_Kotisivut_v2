@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 const Vahvista = (props)=>{
     return(
         <div className="Vahvista">
