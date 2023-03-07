@@ -44,10 +44,7 @@ const ostoskoriSlice = createSlice({
 
 export const initializeOstoskori = ()=>{
 
-    console.log("OstoskoriReducer");
-
     return async dispatch =>{
-            console.log("ostoskori");
             const initOstoskori = await auth.getOstoskori()
             dispatch(setOstokset(initOstoskori))
     }

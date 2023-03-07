@@ -6,7 +6,9 @@ const keikatRouter = require("./routers/keikkaRouter")
 const sessioRouter = require("./routers/sessioRouter")
 const cookieParser = require("cookie-parser")
 
-app.use(cors())
+app.use(cors({
+    origin:"*"
+}))
 const {requestLogger, bodyChecker} = require('./middleware/loggers')
 const {checkAndSetSessionId, checkIfSessionExists} =require('./middleware/authorization')
 app.use(express.json())

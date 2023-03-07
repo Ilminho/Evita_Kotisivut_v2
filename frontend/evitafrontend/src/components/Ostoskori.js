@@ -7,6 +7,8 @@ import Vahvista from "./Vahvista";
 
 
 
+/* eslint-disable*/
+
 
 const Ostoskori =(props)=>{
     const dispatch = useDispatch()
@@ -17,7 +19,6 @@ const Ostoskori =(props)=>{
         setVahvista(!vahvista)
     }
 
-    console.log(props.ostoskori);
 
 
     const tyhjennaOstoskori=()=>{

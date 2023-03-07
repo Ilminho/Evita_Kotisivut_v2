@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { ReactDOM } from 'react-dom/client';
@@ -29,8 +30,6 @@ function App(props) {
     }
 
     dispatch(initializeOstoskori())
-
-    console.log("Muuttuu");
 
     use()
   },[])

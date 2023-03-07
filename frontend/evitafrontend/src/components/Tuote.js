@@ -1,3 +1,5 @@
+/* eslint-disable*/
+
 import { useEffect, useState } from "react"
 import SelectInput from "./SelectInput"
 import MaaraButton from "./MaaraButton"
@@ -17,7 +19,7 @@ const Tuote = (props)=>{
     const [image, setImage] = useState("No image")
     const [selected, setSelected] = useState(tuote.tuotteet[0])
 
-    console.log(props.tuote);
+
 
     const minusOne =()=>{
         maara>0?setMaara(maara-1):console.log("No can do");
